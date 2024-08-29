@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <link rel="stylesheet" href="Counter.css">
+</head>
+<body>
+
+    <h1 class="count">0</h1>
+    <button class="increment">+</button>
+    <button class="decrement">-</button>
+    <div>Increment/Decrement By : <input class="changeBy" type="number" value="1"></div>
+
+    <button class="reset">Reset </button>
+ 
+    
+    <Script>
+    const decrement=document.querySelector(".decrement");
+    const increment=document.querySelector(".increment");
+    const count  = document.querySelector('.count');
+    const changeBy=document.querySelector('.changeBy');
+    const reset=document.querySelector('.reset')
+
+    increment.addEventListener('click',()=>{
+        const countValue=parseInt(count.innerText);
+        const changeByValue=parseInt(changeBy.value)
+        count.innerText=countValue + changeByValue;
+        //we can write in one line 
+       //count.innerText=parseInt(count.innerText) + 1;
+        
+    })
+
+    decrement.addEventListener('click',()=>{
+        const countValue=parseInt(count.innerText);
+        const  changeByValue=parseInt(changeBy.value);
+        count.innerText=countValue - changeByValue;
+    })
+
+    reset.addEventListener("click", () => {
+      count.innerText = 0;
+    });
+
+
+
+    </Script>
+    
+</body>
+</html>

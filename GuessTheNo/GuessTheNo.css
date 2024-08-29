@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+button{
+    background-color: cyan;
+    padding: 10px 16px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input{
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    width: 15rem;
+}
+
+button:disabled{
+cursor: not-allowed;
+}

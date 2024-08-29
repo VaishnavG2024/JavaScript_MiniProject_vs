@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The No</title>
+    <link rel="stylesheet" href="GuessTheNo.css">
+</head>
+<body>
+    <p>Enter a Guess Between 0 to 100 </p>
+
+    <form > 
+        <input class="userInput" type="number" placeholder="Enter The Number" max="100" min="0" required> 
+
+        <div>
+            <button class="subbtn">Submit</button>
+             <button type="button" disabled class="restart-game">Restart Game</button>
+        </div>
+
+        <p class="result"></p>
+        <p class="all-guesses"> </p>
+
+
+
+    </form>
+
+    <script>
+
+        const userInput=document.querySelector( ".userInput");
+        const form=document.querySelector( "form");
+        const result =  document.querySelector(".result");
+        const  all_guesses = document.querySelector(".all-guesses") ;
+        const subbtn = document.querySelector( ".subbtn");
+        const restartGameBtn = document.querySelector(".restart-game");
+
+
+
+        //IIFE=immediate invoke function expression
+    function a() {
+        const allGuessesArray = []
+        let randomNumber=Math.round(Math.random()*100);
+
+
+
+        form.addEventListener( "submit",  (event) =>{
+        event.preventDefault();
+        const userInputValue=parseInt(userInput.value);
+        if(userInputValue === randomNumber)
+        {
+            result.innerText = 'Too low !'
+        }
+        else if(userInputValue > randomNumber)
+        {
+            result.innerText = 'Too High !'
+        }
+        else
+        {
+             result.innerText = 'You Got it  Congrats !!!'
+             restartGameBtn.disabled =  false;
+             subbtn.disabled = true
+        }
+        allGuessesArray.push(userInputValue); 
+        all_guesses.innerText = 'Your Guesses : ' + allGuessesArray.join(', ')
+        //userInput.value = ""
+        form.reset()
+
+
+      })
+         restartGameBtn.addEventListener( "click" , ()=>{
+            result.innerText = '';
+            all_guesses.innerText = '';
+            restartGameBtn.disabled =  true;
+            subbtn.disabled = false;
+            randomNumber = Math.round(Math.random()*100);
+
+          })
+    }
+    a();
+
+
+
+    </script>
+    
+</body>
+</html>
