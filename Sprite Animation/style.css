@@ -1,0 +1,28 @@
+#canvas1{
+    border: 5px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;   
+}
+.controlls {
+    position: absolute;
+    border: 5px solid black;
+    z-index: 10;
+    /* top: 40px; */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: brown;
+}
+.opt{
+    background-color: brown;
+}
+.sel{
+
+    background-color: brown;
+}
+.controlls, select, option {
+    font-size: 26px;
+}
